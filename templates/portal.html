@@ -3,7 +3,6 @@
 {% block content %}
 
 <h1>welcome, {{ current_user.firstname }}!</h1>
-<p class="subtitle">here's a summary of your health information.</p>
 
 <div class="card-container">
 
@@ -49,48 +48,6 @@
             <li>vitamin d3 1000iu &mdash; once daily</li>
         </ul>
         <button>request refill</button>
-    </div>
-
-    <div class="portal-card">
-        <h3>recent test results</h3>
-        <ul>
-            <li>
-                <strong>complete blood count (cbc)</strong> &mdash; jan 14, 2025<br>
-                status: <span class="status-normal">normal</span><br>
-                <button>view details</button>
-            </li>
-            <li>
-                <strong>lipid panel</strong> &mdash; jan 14, 2025<br>
-                status: <span class="status-review">needs review</span><br>
-                <button>view details</button>
-            </li>
-        </ul>
-    </div>
-
-    <div class="portal-card">
-        <h3>messages</h3>
-        <ul>
-            <li>
-                <strong>dr. stone's office</strong> &mdash; feb 2, 2025<br>
-                "your prescription has been renewed and sent to your pharmacy."
-            </li>
-            <li>
-                <strong>billing department</strong> &mdash; jan 20, 2025<br>
-                "your explanation of benefits for your january visit is ready."
-            </li>
-        </ul>
-        <button>send a message</button>
-    </div>
-
-    <div class="portal-card">
-        <h3>my information</h3>
-        <ul>
-            <li><strong>name:</strong> {{ current_user.firstname }} {{ current_user.lastname }}</li>
-            <li><strong>username:</strong> {{ current_user.username }}</li>
-            <li><strong>primary care physician:</strong> dr. emily stone</li>
-            <li><strong>insurance:</strong> blue cross blue shield &mdash; plan ppo 500</li>
-        </ul>
-        <button>edit information</button>
     </div>
 
 </div>
