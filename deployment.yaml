@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: patient-portal
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: patient-portal
+  template:
+    metadata:
+      labels:
+        app: patient-portal
+    spec:
+      containers:
+      - name: patient-portal
+        image: patient-portal:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 5000
+        env:
+        - name: DB
+          valueFrom:
+            secretKeyRef:
+              name: ea-secrets
+              key: DB
+        - name: DB_UN
+          valueFrom:
+            secretKeyRef:
+              name: ea-secrets
+              key: DB_UN
+        - name: DB_PW
+          valueFrom:
+            secretKeyRef:
+              name: ea-secrets
+              key: DB_PW

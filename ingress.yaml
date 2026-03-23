@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: patient-portal-ingress
+spec:
+  rules:
+  - host: patient-portal.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: patient-portal-svc
+            port:
+              number: 80
