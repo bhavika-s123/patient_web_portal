@@ -1,3 +1,4 @@
 .env
 __pycache__
-*.pyc
+*.pyckubectl
+minikube-linux-amd64
